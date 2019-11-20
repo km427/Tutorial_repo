@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html'%}
+      {%block body_block%}
+
+          <div class="jumbotron" align="center">
+              <h3>Students Information Dash Board</h3><hr>
+                     <table class="table" border='2'>
+                       <thead>
+                         <th scope="col">Id</th>
+                         <th scope="col">Student name</th>
+                         <th scope="col">Teachers</th>
+                       <th scope="col">Subjects</th>
+                       </thead>
+                       {%for  st in details %}
+                            <tr>
+                           {% for value in st.values %}
+                                 <td>{{value|title}}</td>
+                               {% endfor %}
+                                   </tr>
+                       {%endfor%}
+                     </table>
+                      </div><br><br><br>
+      {%endblock%}
